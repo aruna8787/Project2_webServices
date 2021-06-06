@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!-- A wrapper state that contains all other states in this file
+- it represents the complete state machine --> 
+<scxml xmlns="http://www.w3.org/2005/07/scxml"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       version="1.0"
+       initial="Main"
+       datamodel="ecmascript">
+ <flow>	   
+  <start-state>service1</start-state>	
+  <end-state>service10</end-state>
+  <end-state>service8</end-state> 
+  </flow>	   
+  <state id="service1" path="/service1">
+      <transition  mediaType="Application/xml" target="service3"/>
+	  <transition  mediaType="Application/json" target="service2"/>
+  </state>
+   <state id="service2" path="/service2">
+      <transition  mediaType="Application/xml" target="service9"/>
+	  <transition  mediaType="Application/json" target="service5"/>
+  </state>
+   <state id="service3" path="/service3">
+      <transition  mediaType="Application/xml" target="service7"/>
+	  <transition  mediaType="Application/json" target="service6"/>
+  </state>
+   <state id="service4" path="/service4">
+      <transition  mediaType="Application/xml" target="service10"/>
+	  <transition  mediaType="Application/json" target="service10"/>
+  </state>
+   <state id="service5" path="/service5">
+     <transition  mediaType="Application/xml" target="service9"/>
+	  <transition  mediaType="Application/json" target="service9"/>
+   </state>
+   <state id="service6" path="/service6">
+      <transition  mediaType="Application/xml" target="service4"/>
+	  <transition  mediaType="Application/json" target="service10"/>
+  </state>
+   <state id="service7" path="/service7">
+      <transition  mediaType="Application/xml" target="service6"/>
+	  <transition  mediaType="Application/json" target="service8"/>
+  
+  </state>
+   <state id="service8" path="/service8">
+      <transition  mediaType="Application/xml" target="end"/>
+	  <transition  mediaType="Application/json" target="end"/>
+  </state>
+   <state id="service9" path="/service9">
+      <transition  mediaType="Application/xml" target="service10"/>
+	  <transition  mediaType="Application/json" target="service4"/>
+  </state>
+   <state id="service10" path="/service10">
+      <transition  mediaType="Application/xml" target="end"/>
+	  <transition  mediaType="Application/json" target="end"/>
+  </state>
+  
+</scxml>

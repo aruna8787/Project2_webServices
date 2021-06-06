@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form id="myform" action="rest/users/xml" method="GET" onsubmit="return get_action()">
+<label>enter username</label><input id="user" name="user" type="text">
+<input type="submit">
+</form>
+<script type="text/javascript">
+function get_action(){
+	var username=document.getElementById("user").value;
+	var letters = /^[A-M|a-m]/;
+    if(letters.test(username))
+{
+alert(username);
+document.getElementById("myform").action="rest/users/json";
+}
+    else(alert(username))
+}
+</script>
+
+</body>
+</html>
